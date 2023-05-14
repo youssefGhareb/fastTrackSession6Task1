@@ -36,10 +36,15 @@ $grayscale: #16151a;
   color: $grayscale;
 }
 
+.disable-scroll{
+  overflow-y: hidden;
+}
+
 //Styles
 body {
   direction: rtl;
   font-family: "Cairo", sans-serif;
+  position: relative;
 }
 
 .navbar {
@@ -51,12 +56,12 @@ body {
         margin-left: 20px;
         .nav-link {
           color: $grayscale;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 600;
         }
         .dropdown-toggle {
           &::after {
-            margin-right: 30px;
+            margin-right: 20px;
           }
         }
       }
@@ -139,7 +144,6 @@ body {
       height: 100%;
       width: 100%;
       background-color: #510b76;
-    //   opacity: 0.6;
       mix-blend-mode: soft-light;
       z-index: 1;
       content: "";
@@ -262,6 +266,16 @@ body {
         color: $grayscale;
         height: 138px;
       }
+
+      a {
+        padding: 5px 40px;
+        background-color: $purple;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        width: fit-content;
+        cursor: pointer;
+      }
     }
     &::before {
       height: 105%;
@@ -276,4 +290,37 @@ body {
       top: 30px;
     }
   }
+}
+
+.site-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 10px #0000004e;
+  color: $grayscale;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  overflow-y: scroll;
+  height: 400px;
+  direction: rtl;
+  padding: 30px;
+  border-radius: 30px;
+
+  #close-icon-cont{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #000;
+    cursor: pointer;
+    width: fit-content;
+  }
+}
+
+.body-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: #00000051;
+  z-index: 9;
 }

@@ -28,9 +28,14 @@
   color: #16151a;
 }
 
+.disable-scroll {
+  overflow-y: hidden;
+}
+
 body {
   direction: rtl;
   font-family: "Cairo", sans-serif;
+  position: relative;
 }
 
 .navbar {
@@ -42,11 +47,11 @@ body {
 }
 .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   color: #16151a;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-toggle::after {
-  margin-right: 30px;
+  margin-right: 20px;
 }
 .navbar #purple-theme {
   background-color: #510b76;
@@ -231,6 +236,16 @@ body {
   color: #16151a;
   height: 138px;
 }
+#section3 .cards .card a {
+  padding: 5px 40px;
+  background-color: #510b76;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
 #section3 .cards::before {
   height: 105%;
   width: 800px;
@@ -242,4 +257,37 @@ body {
   opacity: 0.2;
   border-radius: 30px;
   top: 30px;
+}
+
+.site-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3058823529);
+  color: #16151a;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  overflow-y: scroll;
+  height: 400px;
+  direction: rtl;
+  padding: 30px;
+  border-radius: 30px;
+}
+.site-modal #close-icon-cont {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #000;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.body-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3176470588);
+  z-index: 9;
 }/*# sourceMappingURL=styles.css.map */
